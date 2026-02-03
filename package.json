@@ -1,0 +1,61 @@
+{
+  "name": "bluestarai-leadgen",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI-Powered Lead Management Platform",
+  "author": "Bluestarai World Inc.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:analyze": "vite build --mode analyze",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "echo 'No tests configured yet'",
+    "test:unit": "echo 'No unit tests configured yet'",
+    "test:e2e": "echo 'No e2e tests configured yet'",
+    "security": "./scripts/security-scan.sh",
+    "deploy:dev": "./scripts/deploy.sh dev",
+    "deploy:staging": "./scripts/deploy.sh staging",
+    "deploy:prod": "./scripts/deploy.sh production",
+    "docker:dev": "./scripts/docker.sh dev",
+    "docker:build": "./scripts/docker.sh build",
+    "docker:preview": "./scripts/docker.sh preview",
+    "docker:stop": "./scripts/docker.sh stop",
+    "docker:clean": "./scripts/docker.sh clean",
+    "clean": "rm -rf dist node_modules/.cache",
+    "prepare": "echo 'Ready for development'"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "vite": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}

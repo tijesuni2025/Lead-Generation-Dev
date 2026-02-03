@@ -1,0 +1,22 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install development dependencies
+RUN apk add --no-cache \
+    git \
+    curl \
+    bash
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 5173
+
+ENV NODE_ENV=development
+ENV VITE_HMR_HOST=0.0.0.0
+
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
