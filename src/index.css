@@ -1,0 +1,544 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/Raleway-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+   Bluestarai Brand Guidelines CSS
+   Primary Colors:
+   - Space Blue: #3148B9
+   - Orange: #F24C03
+   - Dark Blue: #0B1828
+   - White: #FFFFFF
+   Secondary Colors:
+   - Grey: #232323
+   - Blue Black: #020409
+   Typography:
+   - Headlines: Raleway SemiBold/Medium
+   - Body: Montserrat
+   */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #020409;
+    color: #FFFFFF;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', system-ui, sans-serif;
+  }
+  
+  ::selection {
+    background-color: rgba(49, 72, 185, 0.3);
+    color: #FFFFFF;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgba(11, 24, 40, 0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(49, 72, 185, 0.5);
+    border-radius: 9999px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(49, 72, 185, 0.7);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 text-white font-semibold rounded-xl transition-all duration-300 cursor-pointer;
+    background: linear-gradient(135deg, #3148B9, #F24C03);
+    box-shadow: 0 10px 25px -5px rgba(49, 72, 185, 0.3);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 20px 40px -5px rgba(49, 72, 185, 0.5), 0 0 20px rgba(242, 76, 3, 0.3);
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.1);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 5px 15px -5px rgba(49, 72, 185, 0.4);
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply px-6 py-3 font-medium rounded-xl transition-all duration-300 cursor-pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(49, 72, 185, 0.5);
+    box-shadow: 0 0 20px rgba(49, 72, 185, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary:active {
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .btn-ghost {
+    @apply px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .btn-ghost:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+  
+  .btn-icon {
+    @apply p-2 rounded-lg transition-all duration-200 cursor-pointer;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .btn-icon:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+  
+  .btn-icon:active {
+    transform: scale(0.95);
+  }
+  
+  /* Card Component - BluestarAI Dark Blue base */
+  .card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+  }
+  
+  .card-hover {
+    @apply card cursor-pointer;
+  }
+  
+  .card-hover:hover {
+    border-color: rgba(49, 72, 185, 0.4);
+    box-shadow: 0 30px 60px -12px rgba(49, 72, 185, 0.15), 0 0 30px rgba(49, 72, 185, 0.1);
+    transform: translateY(-4px);
+  }
+  
+  /* Input Field */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+  }
+  
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .input-field:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.07);
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: rgba(49, 72, 185, 0.6);
+    box-shadow: 0 0 0 3px rgba(49, 72, 185, 0.2), 0 0 20px rgba(49, 72, 185, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Gradient Text - Space Blue to Orange */
+  .gradient-text {
+    background: linear-gradient(90deg, #3148B9, #F24C03);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient Text - Orange accent only */
+  .gradient-text-accent {
+    background: linear-gradient(90deg, #F24C03, #FF6B2C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Mesh Background */
+  .mesh-bg {
+    background-image: 
+      radial-gradient(at 40% 20%, rgba(49, 72, 185, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(242, 76, 3, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(49, 72, 185, 0.1) 0px, transparent 50%);
+  }
+  
+  /* Stat Card */
+  .stat-card {
+    @apply relative overflow-hidden p-6 rounded-2xl cursor-pointer;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    border-color: rgba(49, 72, 185, 0.3);
+    box-shadow: 0 20px 40px -12px rgba(49, 72, 185, 0.15);
+    transform: translateY(-4px);
+  }
+  
+  .stat-card:hover .stat-icon {
+    transform: scale(1.1);
+    background-color: rgba(49, 72, 185, 0.2);
+  }
+  
+  /* Sidebar Navigation */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .sidebar-item:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding-left: 1.25rem;
+  }
+  
+  .sidebar-item:hover svg {
+    color: #3148B9;
+  }
+  
+  .sidebar-item-active {
+    @apply sidebar-item;
+    background: linear-gradient(90deg, rgba(49, 72, 185, 0.2), rgba(49, 72, 185, 0.1));
+    color: #FFFFFF;
+    border-left: 3px solid #3148B9;
+  }
+  
+  .sidebar-item-active:hover {
+    padding-left: 1rem;
+  }
+  
+  /* Table Row */
+  .table-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+  }
+  
+  .table-row:hover {
+    background-color: rgba(49, 72, 185, 0.08);
+    box-shadow: inset 3px 0 0 #3148B9;
+  }
+  
+  .table-row:hover td {
+    color: #FFFFFF;
+  }
+  
+  /* Status Badges */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full transition-all duration-200;
+  }
+  
+  .badge-hot {
+    @apply badge;
+    background-color: rgba(242, 76, 3, 0.2);
+    color: #F24C03;
+    border: 1px solid rgba(242, 76, 3, 0.3);
+  }
+  
+  .badge-hot:hover {
+    background-color: rgba(242, 76, 3, 0.3);
+    box-shadow: 0 0 15px rgba(242, 76, 3, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .badge-warm {
+    @apply badge;
+    background-color: rgba(255, 165, 0, 0.2);
+    color: #FFA500;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+  }
+  
+  .badge-warm:hover {
+    background-color: rgba(255, 165, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .badge-cold {
+    @apply badge;
+    background-color: rgba(49, 72, 185, 0.2);
+    color: #3148B9;
+    border: 1px solid rgba(49, 72, 185, 0.3);
+  }
+  
+  .badge-cold:hover {
+    background-color: rgba(49, 72, 185, 0.3);
+    box-shadow: 0 0 15px rgba(49, 72, 185, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .badge-new {
+    @apply badge;
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #22C55E;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+  
+  .badge-new:hover {
+    background-color: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+    transform: scale(1.05);
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-2 rounded-full overflow-hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+  
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-3 py-2 text-sm rounded-lg shadow-xl whitespace-nowrap;
+    background-color: #0B1828;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Glow Effect */
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 rounded-full -z-10;
+    background-color: rgba(49, 72, 185, 0.2);
+    filter: blur(48px);
+  }
+  
+  /* Interactive Link */
+  .link-hover {
+    @apply transition-all duration-200 cursor-pointer;
+    color: #3148B9;
+  }
+  
+  .link-hover:hover {
+    color: #F24C03;
+    text-decoration: underline;
+  }
+  
+  /* Avatar with hover */
+  .avatar {
+    @apply transition-all duration-300;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(49, 72, 185, 0.4);
+  }
+  
+  /* List Item Hover */
+  .list-item-hover {
+    @apply rounded-xl transition-all duration-200 cursor-pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .list-item-hover:hover {
+    background-color: rgba(49, 72, 185, 0.15);
+    transform: translateX(4px);
+    box-shadow: -4px 0 0 #3148B9;
+  }
+  
+  /* Notification Dot */
+  .notification-dot {
+    @apply absolute w-2 h-2 rounded-full;
+    background-color: #F24C03;
+    animation: pulse-dot 2s infinite;
+  }
+  
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+  }
+  
+  /* Quick Action Button */
+  .quick-action {
+    @apply p-4 rounded-xl text-left transition-all duration-300 cursor-pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .quick-action:hover {
+    background-color: rgba(49, 72, 185, 0.15);
+    border-color: rgba(49, 72, 185, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px rgba(49, 72, 185, 0.3);
+  }
+  
+  .quick-action:hover svg {
+    color: #3148B9;
+    transform: scale(1.1);
+  }
+  
+  .quick-action:active {
+    transform: translateY(-2px);
+  }
+  
+  /* Recommendation Card */
+  .recommendation-card {
+    @apply p-4 rounded-xl transition-all duration-300 cursor-pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .recommendation-card:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  /* Chat Message */
+  .chat-message {
+    @apply max-w-[85%] p-3 rounded-2xl transition-all duration-200;
+  }
+  
+  .chat-message:hover {
+    transform: scale(1.02);
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
